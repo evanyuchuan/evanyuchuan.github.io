@@ -1,7 +1,45 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<html manifest="cache.appcache">
+	<head>
+		<meta charset="utf-8">
+		<title>Bell Schedule</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="apple-touch-icon-precomposed" sizes="180x180" href="bell.png">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="app">
+			<h1 id="clock"></h1>
+			<p id="period"></p>
+			<p id="warning_1"></p>
+			<p id="warning_2"></p>
+			<p id="beginning"></p>
+			<p id="end"></p>
+			<div id="inputs">
+				<p>School is ahead by <input id="ahead" type="text" value="0" maxlength="3" oninput="setAheadValue()" > sec.</p>
+			</div>
+		</div>
+		<p id="settingButton"><button onclick="toggleSettings()">Settings</button></p>
+
+		<script type="text/javascript">
+			document.ontouchmove = function(e) {e.preventDefault()};
+		</script>
+	<script type="text/javascript" src="schedules.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+
+	<!-- Google Analytics -->
+	<!-- <script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-49917609-1', 'auto');
+	ga.setAttribute('async', 'true');
+	ga('send', 'pageview');
+	</script> -->
+	
+	</body>
 </html>
