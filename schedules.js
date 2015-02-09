@@ -37,7 +37,7 @@ var monday4 = {
 var monday5 = {
 	name: "D Block",
 	beginning: "11:15",
-	end: "12：05",
+	end: "12:05",
 	enabled: true,
 };
 

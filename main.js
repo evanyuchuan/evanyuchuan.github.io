@@ -79,41 +79,32 @@ function getTodaysSchedule()
 	var month = schoolTimeObject.getMonth();
 	var day = schoolTimeObject.getDate();
 
-	switch (day)
+	switch (weekday)
 {
 case 0:
-{
 	(weekday===1)
 return mondaySchedule;
-}
   break;
 case 1:
-{
-	(weekday===2)
+	 (weekday===2)
 return mondaySchedule;
-}
   break;
 case 2:
-  {
-	(weekday===3)
+	 (weekday===3)
 return mondaySchedule;
-}
   break;
 case 3:
-  {
-	(weekday===4)
+	 (weekday===4)
 return mondaySchedule;
-}
   break;
 case 4:
- {
-	(weekday===5)
+	 (weekday===5)
 return mondaySchedule;
-}
   break;
 case 6:
   x="Today it's Weekend";
   break;
+  default:;
 
 }
 }
