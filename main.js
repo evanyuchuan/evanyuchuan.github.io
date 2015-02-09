@@ -87,19 +87,19 @@ return mondaySchedule;
   break;
 case 1:
 	 (weekday===2)
-return mondaySchedule;
+return tuedaySchedule;
   break;
 case 2:
 	 (weekday===3)
-return mondaySchedule;
+return wednesdaySchedule;
   break;
 case 3:
 	 (weekday===4)
-return mondaySchedule;
+return thursdaySchedule;
   break;
 case 4:
 	 (weekday===5)
-return mondaySchedule;
+return fridaySchedule;
   break;
 case 6:
   x="Today it's Weekend";
