@@ -1,77 +1,192 @@
 
-var monday0 = {
-	name: "Advisory",
+var normal0 = {
+	name: "Period 0",
 	beginning: "0:01",
-	end: "8:05",
+	warningBellOne: 0,
+	warningBellTwo: "6:47",
+	warningBellTwoName: "3 min bell",
+	bell: "6:50",
+	end: "7:45",
+	enabled: false,
+};
+
+var normal1 = {
+	name: "Period 1",
+	beginning: "7:45",
+	warningBellOne: "7:45",
+	warningBellOneName: "10 min bell",
+	warningBellTwo: "7:52",
+	warningBellTwoName: "3 min bell",
+	bell: "7:55",
+	end: "8:50",
 	enabled: true,
 };
 
+var normal2 = {
+	name: "Period 2",
+	beginning: "8:50",
+	warningBellOne: 0,
+	warningBellTwo: "8:54",
+	warningBellTwoName: "3 min bell",
+	bell: "8:57",
+	end: "9:52",
+	enabled: true,
+};
+
+var normal3 = {
+	name: "Period 3",
+	beginning: "9:52",
+	warningBellOne: "10:02",
+	warningBellOneName: "break ends",
+	warningBellTwo: "10:06",
+	warningBellTwoName: "3 min bell",
+	bell: "10:09",
+	end: "11:09",
+	enabled: true,
+};
+
+var normal4 = {
+	name: "Period 4",
+	beginning: "11:09",
+	warningBellOne: 0,
+	warningBellTwo: "11:13",
+	warningBellTwoName: "3 min bell",
+	bell: "11:16",
+	end: "12:11",
+	enabled: true,
+};
+
+var normal5 = {
+	name: "Period 5",
+	beginning: "12:11",
+	warningBellOne: "12:41",
+	warningBellOneName: "lunch ends",
+	warningBellTwo: "12:45",
+	warningBellTwoName: "3 min bell",
+	bell: "12:48",
+	end: "13:43",
+	enabled: true,
+};
+
+var normal6 = {
+	name: "Period 6",
+	beginning: "13:43",
+	warningBellOne: 0,
+	warningBellTwo: "13:47",
+	warningBellTwoName: "3 min bell",
+	bell: "13:50",
+	end: "14:45",
+	enabled: true,
+};
+
+var normalAfterSchool = {
+	name: "After School",
+	beginning: "14:45",
+	warningBellOne: 0,
+	warningBellTwo: 0,
+	bell: 0,
+	end: 0,
+	enabled: true,
+};
+
+var normalSchedule = [
+	normal0,
+	normal1,
+	normal2,
+	normal3,
+	normal4,
+	normal5,
+	normal6,
+	normalAfterSchool
+	];
+
+var monday0 = {
+	name: "Period 0",
+	beginning: "0:01",
+	warningBellOne: "6:40",
+	warningBellOneName: "10 min bell",
+	warningBellTwo: "6:47",
+	warningBellTwoName: "3 min bell",
+	bell: "6:50",
+	end: "7:30",
+	enabled: false,
+};
+
 var monday1 = {
-	name: "A Block",
-	beginning: "8:05",
-	end: "8:55",
+	name: "Period 1",
+	beginning: "7:30",
+	warningBellOne: "8:15",
+	warningBellOneName: "10 min bell",
+	warningBellTwo: "8:22",
+	warningBellTwoName: "3 min bell",
+	bell: "8:25",
+	end: "9:15",
 	enabled: true,
 };
 
 var monday2 = {
-	name: "B Block",
-	beginning: "8:55",
-	end: "9:45",
+	name: "Period 2",
+	beginning: "9:15",
+	warningBellOne: 0,
+	warningBellTwo: "9:19",
+	warningBellTwoName: "3 min bell",
+	bell: "9:22",
+	end: "10:12",
 	enabled: true,
 };
 
 var monday3 = {
-	name: "Announcement",
-	beginning: "9:45",
-	end: "10:25",
+	name: "Period 3",
+	beginning: "10:12",
+	warningBellOne: "10:22",
+	warningBellOneName: "break ends",
+	warningBellTwo: "10:26",
+	warningBellTwoName: "3 min bell",
+	bell: "10:29",
+	end: "11:24",
 	enabled: true,
 };
 
 var monday4 = {
-	name: "C Block",
-	beginning: "10:25",
-	end: "11:15",
+	name: "Period 4",
+	beginning: "11:24",
+	warningBellOne: 0,
+	warningBellTwo: "11:28",
+	warningBellTwoName: "3 min bell",
+	bell: "11:31",
+	end: "12:21",
 	enabled: true,
 };
 
 var monday5 = {
-	name: "D Block",
-	beginning: "11:15",
-	end: "12:05",
+	name: "Period 5",
+	beginning: "12:21",
+	warningBellOne: "12:51",
+	warningBellOneName: "lunch ends",
+	warningBellTwo: "12:55",
+	warningBellTwoName: "3 min bell",
+	bell: "12:58",
+	end: "13:48",
 	enabled: true,
 };
 
 var monday6 = {
-	name: "Lunch",
-	beginning: "12:05",
-	end: "12:40",
-	enabled: true,
-};
-
-var monday7 = {
-	name: "E Block",
-	beginning: "12:40",
-	end: "13:30",
-	enabled: true,
-};
-
-var monday8 = {
-	name: "F Block",
-	beginning: "13:30",
-	end: "14:20",
-	enabled: true,
-};
-
-var monday9 = {
-	name: "G Block",
-	beginning: "14:20",
-	end: "15:15",
+	name: "Period 6",
+	beginning: "13:48",
+	warningBellOne: 0,
+	warningBellTwo: "13:52",
+	warningBellTwoName: "3 min bell",
+	bell: "13:55",
+	end: "14:45",
 	enabled: true,
 };
 
 var mondayAfterSchool = {
 	name: "After School",
-	beginning: "15:15",
+	beginning: "14:45",
+	warningBellOne: 0,
+	warningBellTwo: 0,
+	bell: 0,
 	end: 0,
 	enabled: true,
 };
@@ -84,324 +199,234 @@ var mondaySchedule = [
 	monday4,
 	monday5,
 	monday6,
-	monday7,
-	monday8,
-	monday9,
 	mondayAfterSchool
 	];
-
-var tuesday0 = {
-	name: "Advisory",
+/*
+var assemblyA0 = {
+	name: "Period 0",
 	beginning: "0:01",
-	end: "8:05",
+	warningBellOne: "6:40",
+	warningBellOneName: "10 min bell",
+	warningBellTwo: "6:47",
+	warningBellTwoName: "3 min bell",
+	bell: "6:50",
+	end: "7:45",
+	enabled: false,
+};
+
+var assemblyA1 = {
+	name: "Period 1",
+	beginning: "7:45",
+	warningBellOne: "7:45",
+	warningBellOneName: "10 min bell",
+	warningBellTwo: "7:52",
+	warningBellTwoName: "3 min bell",
+	bell: "7:55",
+	end: "8:44",
 	enabled: true,
 };
 
-var tuesday1 = {
-	name: "F Block",
-	beginning: "8:05",
-	end: "8:55",
+var assemblyAAssembly = {
+	name: "Assembly A",
+	beginning: "8:44",
+	warningBellOne: 0,
+	warningBellTwo: "8:48",
+	warningBellTwoName: "3 min bell",
+	bell: "8:51",
+	end: "9:24",
 	enabled: true,
 };
 
-var tuesday2 = {
-	name: "G Block",
-	beginning: "8:55",
-	end: "9:45",
+var assemblyA2 = {
+	name: "Period 2",
+	beginning: "9:24",
+	warningBellOne: 0,
+	warningBellTwo: "9:29",
+	warningBellTwoName: "3 min bell",
+	bell: "9:32",
+	end: "10:21",
 	enabled: true,
 };
 
-var tuesday3 = {
-	name: "W Block",
-	beginning: "9:45",
-	end: "10:25",
+var assemblyA3 = {
+	name: "Period 3",
+	beginning: "10:21",
+	warningBellOne: "10:31",
+	warningBellOneName: "break ends",
+	warningBellTwo: "10:35",
+	warningBellTwoName: "3 min bell",
+	bell: "10:38",
+	end: "11:27",
 	enabled: true,
 };
 
-var tuesday4 = {
-	name: "E Block",
-	beginning: "10:25",
-	end: "11:15",
+var assemblyA4 = {
+	name: "Period 4",
+	beginning: "11:27",
+	warningBellOne: 0,
+	warningBellTwo: "11:31",
+	warningBellTwoName: "3 min bell",
+	bell: "11:34",
+	end: "12:23",
 	enabled: true,
 };
 
-var tuesday5 = {
-	name: "D Block",
-	beginning: "11:15",
-	end: "12：05",
+var assemblyA5 = {
+	name: "Period 5",
+	beginning: "12:23",
+	warningBellOne: "12:53",
+	warningBellOneName: "lunch ends",
+	warningBellTwo: "12:57",
+	warningBellTwoName: "3 min bell",
+	bell: "13:00",
+	end: "13:49",
 	enabled: true,
 };
 
-var tuesday6 = {
-	name: "Lunch",
-	beginning: "12:05",
-	end: "12:40",
+var assemblyA6 = {
+	name: "Period 6",
+	beginning: "13:49",
+	warningBellOne: 0,
+	warningBellTwo: "13:53",
+	warningBellTwoName: "3 min bell",
+	bell: "13:56",
+	end: "14:45",
 	enabled: true,
 };
 
-var tuesday7 = {
-	name: "B Block",
-	beginning: "12:40",
-	end: "13:30",
+var assemblyAAfterSchool = {
+	name: "Period 6",
+	beginning: "13:49",
+	warningBellOne: 0,
+	warningBellTwo: "13:53",
+	warningBellTwoName: "3 min bell",
+	bell: "13:56",
+	end: "14:45",
 	enabled: true,
 };
 
-var tuesday8 = {
-	name: "A Block",
-	beginning: "13:30",
-	end: "14:20",
-	enabled: true,
-};
-
-var tuesday9 = {
-	name: "C Block",
-	beginning: "14:20",
-	end: "15:15",
-	enabled: true,
-};
-
-var tuesdayAfterSchool = {
-	name: "After School",
-	beginning: "15:15",
-	end: 0,
-	enabled: true,
-};
-
-var tuesdaySchedule = [
-	tuesday0,
-	tuesday1,
-	tuesday2,
-	tuesday3,
-	tuesday4,
-	tuesday5,
-	tuesday6,
-	tuesday7,
-	tuesday8,
-	tuesday9,
-	tuesdayAfterSchool
+var assemblyA = [
+	assemblyA0,
+	assemblyA1,
+	assemblyAAssembly,
+	assemblyA2,
+	assemblyA3,
+	assemblyA4,
+	assemblyA5,
+	assemblyA6,
+	assemblyAAfterSchool
 	];
 
-	var wednesday0 = {
-	name: "Advisory",
+var assemblyB0 = {
+	name: "Period 0",
 	beginning: "0:01",
-	end: "8:05",
+	warningBellOne: 0,
+	warningBellTwo: "6:47",
+	warningBellTwoName: "3 min bell",
+	bell: "6:50",
+	end: "7:45",
+	enabled: false,
+};
+
+var assemblyB1 = {
+	name: "Period 1",
+	beginning: "7:45",
+	warningBellOne: "7:45",
+	warningBellOneName: "10 min bell",
+	warningBellTwo: "7:52",
+	warningBellTwoName: "3 min bell",
+	bell: "7:55",
+	end: "8:44",
 	enabled: true,
 };
 
-var wednesday1 = {
-	name: "G Block",
-	beginning: "8:05",
-	end: "9:15",
+var assemblyB2 = {
+	name: "Period 2",
+	beginning: "8:44",
+	warningBellOne: 0,
+	warningBellTwo: "8:48",
+	warningBellTwoName: "3 min bell",
+	bell: "8:51",
+	end: "9:40",
 	enabled: true,
 };
 
-var wednesday2 = {
-	name: "C Block",
-	beginning: "9:15",
-	end: "10:25",
+var assemblyBAssembly = {
+	name: "Assembly B",
+	beginning: "9:40",
+	warningBellOne: 0,
+	warningBellTwo: "9:44",
+	warningBellTwoName: "3 min bell",
+	bell: "9:47",
+	end: "10:21",
 	enabled: true,
 };
 
-var wednesday3 = {
-	name: "X Block",
-	beginning: "10:25",
-	end: "11:05",
+var assemblyB3 = {
+	name: "Period 3",
+	beginning: "10:21",
+	warningBellOne: "10:31",
+	warningBellOneName: "break ends",
+	warningBellTwo: "10:35",
+	warningBellTwoName: "3 min bell",
+	bell: "10:38",
+	end: "11:27",
 	enabled: true,
 };
 
-var wednesday4 = {
-	name: "D Block",
-	beginning: "11:05",
-	end: "12:15",
+var assemblyB4 = {
+	name: "Period 4",
+	beginning: "11:27",
+	warningBellOne: 0,
+	warningBellTwo: "11:31",
+	warningBellTwoName: "3 min bell",
+	bell: "11:34",
+	end: "12:23",
 	enabled: true,
 };
 
-var wednesday5 = {
-	name: "A Block",
-	beginning: "13:00",
-	end: "14：10",
+var assemblyB5 = {
+	name: "Period 5",
+	beginning: "12:23",
+	warningBellOne: "12:53",
+	warningBellOneName: "lunch ends",
+	warningBellTwo: "12:57",
+	warningBellTwoName: "3 min bell",
+	bell: "13:00",
+	end: "13:49",
 	enabled: true,
 };
 
-var wednesday6 = {
-	name: "Activity",
-	beginning: "14:10",
-	end: "15:15",
+var assemblyB6 = {
+	name: "Period 6",
+	beginning: "13:49",
+	warningBellOne: 0,
+	warningBellTwo: "13:53",
+	warningBellTwoName: "3 min bell",
+	bell: "13:56",
+	end: "14:45",
 	enabled: true,
 };
 
-var wednesdayAfterSchool = {
-	name: "After School",
-	beginning: "15:15",
-	end: 0,
+var assemblyBAfterSchool = {
+	name: "Period 6",
+	beginning: "13:49",
+	warningBellOne: 0,
+	warningBellTwo: "13:53",
+	warningBellTwoName: "3 min bell",
+	bell: "13:56",
+	end: "14:45",
 	enabled: true,
 };
 
-varwednesdaySchedule = [
-	wednesday0,
-	wednesday1,
-	wednesday2,
-	wednesday3,
-	wednesday4,
-	wednesday5,
-	wednesday6,
-	wednesdayAfterSchool
-	];
-	
-	var thursday0 = {
-	name: "Advisory",
-	beginning: "0:01",
-	end: "8:50",
-	enabled: true,
-};
-
-var thursday1 = {
-	name: "F Block",
-	beginning: "8:50",
-	end: "10:00",
-	enabled: true,
-};
-
-var thursday2 = {
-	name: "Y Block",
-	beginning: "10:00",
-	end: "10:50",
-	enabled: true,
-};
-
-var thursday3 = {
-	name: "E Block",
-	beginning: "10:50",
-	end: "12:00",
-	enabled: true,
-};
-
-var thursday4 = {
-	name: "Lunch",
-	beginning: "12:00",
-	end: "12:45",
-	enabled: true,
-};
-
-var thursday5 = {
-	name: "Advisory",
-	beginning: "12:45",
-	end: "13:15",
-	enabled: true,
-};
-
-var thursday6 = {
-	name: "Activity",
-	beginning: "14:25",
-	end: "15:15",
-	enabled: true,
-};
-
-var thursdayAfterSchool = {
-	name: "After School",
-	beginning: "15:15",
-	end: 0,
-	enabled: true,
-};
-
-var thursdaySchedule = [
-	thursday0,
-	thursday1,
-	thursday2,
-	thursday3,
-	thursday4,
-	thursday5,
-	thursday6,
-	thursdayAfterSchool
-	];
-	
-var friday0 = {
-	name: "Advisory",
-	beginning: "0:01",
-	end: "8:05",
-	enabled: true,
-};
-
-var friday1 = {
-	name: "C Block",
-	beginning: "8:05",
-	end: "8:55",
-	enabled: true,
-};
-
-var friday2 = {
-	name: "A Block",
-	beginning: "8:55",
-	end: "9:45",
-	enabled: true,
-};
-
-var friday3 = {
-	name: "Community Time",
-	beginning: "9:45",
-	end: "10:15",
-	enabled: true,
-};
-
-var friday4 = {
-	name: "F Block",
-	beginning: "10:15",
-	end: "11:05",
-	enabled: true,
-};
-
-var friday5 = {
-	name: "D Block",
-	beginning: "11:05",
-	end: "11：55",
-	enabled: true,
-};
-
-var friday6 = {
-	name: "Lunch",
-	beginning: "11:55",
-	end: "12:40",
-	enabled: true,
-};
-
-var friday7 = {
-	name: "B Block",
-	beginning: "12:40",
-	end: "13:30",
-	enabled: true,
-};
-
-var friday8 = {
-	name: "G Block",
-	beginning: "13:30",
-	end: "14:20",
-	enabled: true,
-};
-
-var friday9 = {
-	name: "E Block",
-	beginning: "14:20",
-	end: "15:15",
-	enabled: true,
-};
-
-var fridayAfterSchool = {
-	name: "After School",
-	beginning: "15:15",
-	end: 0,
-	enabled: true,
-};
-
-var fridaySchedule = [
-	friday0,
-	friday1,
-	friday2,
-	friday3,
-	friday4,
-	friday5,
-	friday6,
-	friday7,
-	friday8,
-	friday9,
-	fridayAfterSchool
+var assemblyB = [
+	assemblyB0,
+	assemblyB1,
+	assemblyB2,
+	assemblyBAssembly,
+	assemblyB3,
+	assemblyB4,
+	assemblyB5,
+	assemblyB6,
+	assemblyBAfterSchool
 	];
