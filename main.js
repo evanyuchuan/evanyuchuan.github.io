@@ -1,15 +1,18 @@
+@@ -0,0 +1,358 @@
 var schedule;
 var ahead = document.getElementById('ahead');
 var aheadValue;
 
+window.onload = init();
 
-window.onload = function init()
+function init()
 {
 	schedule = getTodaysSchedule();
 	getAheadValueFromCookie();
 	interval = setInterval(main, 100);
 	checkForUpdate();
 }
+
 function checkForUpdate()
 {
 	window.applicationCache.addEventListener('updateready', updateApplication);
@@ -17,7 +20,11 @@ function checkForUpdate()
 
 function updateApplication(event)
 {
-	if (window.applicationCache.status != 4) return;
+	if (window.applicationCache.status != 4)
+	{
+		return;
+	}
+
 	window.applicationCache.removeEventListener('updateready', updateApplication);
 	window.applicationCache.swapCache();
 	window.location.reload();
@@ -34,7 +41,7 @@ function getAheadValueFromCookie()
 {
 	ahead.value = 0;
 
-	if (getCookie("ahead") != null && !isNaN(getCookie("ahead"))) // run if the cookie exists and it's a number (not a NaN)
+	if (getCookie("ahead") !== null && !isNaN(getCookie("ahead"))) // run if the cookie exists and it's a number (not a NaN)
 	{
 		ahead.value = getCookie("ahead");
 	}
@@ -76,39 +83,19 @@ function getTodaysSchedule()
 {
 	var schoolTimeObject = getSchoolTime();
 	var weekday = schoolTimeObject.getDay();
-	var month = schoolTimeObject.getMonth();
-	var day = schoolTimeObject.getDate();
+	//var month = schoolTimeObject.getMonth();
+	//var day = schoolTimeObject.getDate();
+	
+	if (weekday === 1)
+	{
+		return mondaySchedule;
+	}
 
-	switch (weekday)
-{
-case 0:
-	(weekday===1)
-return mondaySchedule;
-  break;
-case 1:
-	 (weekday===2)
-return tuedaySchedule;
-  break;
-case 2:
-	 (weekday===3)
-return wednesdaySchedule;
-  break;
-case 3:
-	 (weekday===4)
-return thursdaySchedule;
-  break;
-case 4:
-	 (weekday===5)
-return fridaySchedule;
-  break;
-case 6:
-  x="Today it's Weekend";
-  break;
-  default:;
-
+	else
+	{
+		return normalSchedule;
+	}
 }
-}
-
 
 function getCurrentPeriod()
 {
@@ -144,11 +131,82 @@ function displayCountdowns()
 {
 	var currentPeriod = getCurrentPeriod();
 
+	var warning_1 = document.getElementById('warning_1');
+	var warning_2 = document.getElementById('warning_2');
 	var beginning = document.getElementById('beginning');
 	var end = document.getElementById('end');
-}
 
-	
+	if (currentPeriod.warningBellOne !== 0)
+	{
+		if (isBefore(currentPeriod.warningBellOne))
+		{
+			warning_1.innerHTML = timeUntil(convertStringToDateObject(currentPeriod.warningBellOne)) + " until " + currentPeriod.warningBellOneName;
+		}
+
+		else if (isBefore(currentPeriod.bell))
+		{
+			warning_1.innerHTML = currentPeriod.warningBellOneName + " already rang";
+		}
+
+		else
+		{
+			warning_1.innerHTML = "";
+		}
+	}
+
+	else
+	{
+		warning_1.innerHTML = "";
+	}
+
+
+
+	if (currentPeriod.warningBellTwo !== 0)
+	{
+		if (isBefore(currentPeriod.warningBellTwo))
+		{
+			warning_2.innerHTML = timeUntil(convertStringToDateObject(currentPeriod.warningBellTwo)) + " until " + currentPeriod.warningBellTwoName;
+		}
+
+		else if (isBefore(currentPeriod.bell))
+		{
+			warning_2.innerHTML = currentPeriod.warningBellTwoName + " already rang";
+		}
+
+		else
+		{
+			warning_2.innerHTML = "";
+		}
+	}
+
+	else
+	{
+		warning_2.innerHTML = "";
+	}
+
+
+
+	if (currentPeriod.bell !== 0)
+	{
+		if (isBefore(currentPeriod.bell))
+		{
+			beginning.innerHTML = timeUntil(convertStringToDateObject(currentPeriod.bell)) + " until period starts";
+			end.innerHTML = "";
+		}
+
+		else
+		{
+			beginning.innerHTML = "";
+			end.innerHTML = timeUntil(convertStringToDateObject(currentPeriod.end)) + " until period ends";
+		}
+	}
+
+	else
+	{
+		beginning.innerHTML = "";
+		end.innerHTML = "";
+	}
+}
 
 function timeUntil(futureTime)
 {
@@ -195,7 +253,7 @@ function formatMs(ms)
 
 	second = seconds;
 
-	if (hour != 0)
+	if (hour !== 0)
 	{
 		return hour + ":" + addZero(minute) + ":" + addZero(second);
 	}
@@ -213,7 +271,7 @@ function convertStringToDateObject(string)
 
 	var positionOfColon = string.search(":");
 	schoolTimeObject.setHours(string.substr(0, positionOfColon));
-	schoolTimeObject.setMinutes(string.substr(positionOfColon + 1, 2))
+	schoolTimeObject.setMinutes(string.substr(positionOfColon + 1, 2));
 
 	return schoolTimeObject;
 }
@@ -258,7 +316,7 @@ function toggleSettings()
 {
 	var inputs = document.getElementById('inputs');
 
-	if (inputs.style.getPropertyValue('display') == null || inputs.style.getPropertyValue('display') == 'none')
+	if (inputs.style.getPropertyValue('display') === null || inputs.style.getPropertyValue('display') == 'none')
 	{
 		inputs.style.setProperty('display', 'block');
 	}
@@ -285,8 +343,16 @@ function getCookie(cname)
 	for (var i = 0; i < ca.length; i++)
 	{
         var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1);
-        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+
+        while (c.charAt(0) == ' ')
+		{
+			c = c.substring(1);
+		}
+
+        if (c.indexOf(name) != -1)
+		{
+			return c.substring(name.length, c.length);
+		}
     }
 
     return "";
